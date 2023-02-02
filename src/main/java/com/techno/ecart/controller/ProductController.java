@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.techno.ecart.request.ProductDataSaveRequest;
@@ -38,8 +39,15 @@ public class ProductController {
 		
 	}
 	
-	@DeleteMapping("/deleteProduct/{id}")
-	public ResponseEntity<?> deleteProduct(@PathVariable("id") long id) {
+//	@DeleteMapping("/deleteProduct/{id}")
+//	public ResponseEntity<?> deleteProduct(@PathVariable("id") long id) {
+//		productService.deleteProduct(id);
+//		return ResponseEntity.ok("Product is Delete");
+//		
+//	}
+	
+	@DeleteMapping("/deleteProduct")
+	public ResponseEntity<?> deleteProduct(@RequestParam long id) throws Exception {
 		productService.deleteProduct(id);
 		return ResponseEntity.ok("Product is Delete");
 		

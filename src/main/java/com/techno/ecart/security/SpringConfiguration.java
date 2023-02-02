@@ -44,6 +44,7 @@ public class SpringConfiguration extends WebSecurityConfigurerAdapter{
 		.disable()
 		.authorizeRequests()
 		.antMatchers("/token").permitAll()
+		.antMatchers("/signUp").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
