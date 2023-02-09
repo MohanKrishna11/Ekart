@@ -16,6 +16,7 @@ private final static BCryptPasswordEncoder bCryptPasswordEncoder  = new BCryptPa
 		dataResponse.setUserName(user.getUserName());
 		dataResponse.setEmailId(user.getEmailId());
 		dataResponse.setPassword(user.getPassword());
+		dataResponse.setRole(user.getRole());
 		return dataResponse;
 		
 	}
@@ -24,6 +25,7 @@ private final static BCryptPasswordEncoder bCryptPasswordEncoder  = new BCryptPa
 		User user = new User();
 		user.setEmailId(request.getEmailId());
 		user.setUserName(request.getUserName());
+		user.setRole(request.getRole());
 		user.setPassword(bCryptPasswordEncoder.encode(request.getPassword()));
 		return user;
 		

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,12 +21,12 @@ import com.techno.ecart.response.ProductDataResponse;
 import com.techno.ecart.service.ProductService;
 
 @RestController
+@RequestMapping("/user")
 public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	
-	@PostMapping("addProduct")
+	@PostMapping("/addProduct")
 	public ResponseEntity<?>  addProducts(@RequestBody ProductDataSaveRequest request){
 		productService.addProduct(request);
 		return ResponseEntity.ok("Product is Added");

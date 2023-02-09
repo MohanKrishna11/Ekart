@@ -7,6 +7,7 @@ import lombok.Data;
 public class UserDataRequest {
 
 	private String emailId;
+	private String role;
 	private String password;
 	private String userName;
 	private String addresLine1;

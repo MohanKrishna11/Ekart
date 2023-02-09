@@ -11,6 +11,7 @@ public class UserDataResponse {
 	private long id;
 	private String emailId;
 	private String userName;
+	private String role;
 	private String password;
 
 }
